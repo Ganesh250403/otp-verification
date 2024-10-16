@@ -1,0 +1,86 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+}
+
+/* Container Styling */
+.container {
+    width: 100%;
+    max-width: 400px; /* Limit the width of the container */
+    margin: 50px auto; /* Center the container */
+    padding: 20px; /* Padding around the content */
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Login Wrapper */
+.login-wrapper {
+    text-align: center; /* Center the text */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 24px; /* Font size for the header */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+/* Input Box Styling */
+.input-box {
+    margin-bottom: 15px; /* Space between input fields */
+    text-align: left; /* Align text to the left */
+}
+
+.input-box label {
+    display: block; /* Label on a new line */
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: bold; /* Bold text for labels */
+}
+
+.input-box input {
+    width: 100%; /* Full width input fields */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners for inputs */
+    font-size: 16px; /* Font size for inputs */
+}
+
+/* Button Styling */
+.btn {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for the button */
+    background-color: #17c4c7; /* Green background for the button */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 18px; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Extra Line Styling */
+.extra-line {
+    margin-top: 15px; /* Space above extra line */
+}
+
+.extra-line a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Blue color for links */
+}
+
+.extra-line a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

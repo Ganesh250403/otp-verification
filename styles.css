@@ -1,0 +1,142 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Login wrapper */
+.login-wrapper {
+    background-color: rgb(226, 241, 225);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Logo styles */
+.logo {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Header styles */
+h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+}
+
+/* Input box styles */
+.input-box {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input {
+    position: relative;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff; /* Change this to your preferred focus color */
+}
+
+/* Icon styles */
+input[type="email"] + .fas,
+input[type="password"] + .fas {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #999;
+}
+
+/* Checkbox styles */
+.check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.check input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.check label {
+    font-size: 14px;
+}
+
+/* Button styles */
+.btn {
+    background-color: #007bff; /* Button color */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+/* Extra line styles */
+.extra-line {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.extra-line a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+}
+
+.extra-line a:hover {
+    text-decoration: underline;
+}

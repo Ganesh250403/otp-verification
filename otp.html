@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./forgot.css"> <!-- Link your CSS file here -->
+    <title>OTP Confirmation</title>
+    <style>
+        .input-error {
+            border: 2px solid red;
+        }
+    </style>
+    <script>
+        async function handleOtpSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(event.target); // Get form data
+            const data = Object.fromEntries(formData); // Convert to object
+
+            // Reset error states
+            document.getElementById('otp').classList.remove('input-error');
+
+            // OTP validation (must be 6 digits)
+            if (!/^\d{6}$/.test(data.otp)) {
+                alert('OTP must be exactly 6 digits.');
+                document.getElementById('otp').classList.add('input-error');
+                return;
+            }
+
+            // If no errors, proceed with form submission
+            try {
+                const response = await fetch('http://localhost:4000/validate-otp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(result.message); // Show success message
+                    window.location.href = result.redirect; // Redirect to reset password page
+                } else {
+                    alert(result.message); // Show error message
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while validating your OTP.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-wrapper">
+            <h1>OTP Confirmation</h1>
+            <p>Please enter the OTP sent to your email.</p>
+            <form action="#" method="POST" onsubmit="handleOtpSubmit(event)">
+
+                <!-- OTP Input -->
+                <div class="input-box">
+                    <label for="otp">Enter the OTP</label>
+                    <input type="text" id="otp" name="otp" required placeholder="Enter 6-digit OTP">
+                </div>
+
+                <input type="hidden" name="email" value="<!-- email here -->"> <!-- You can dynamically set this value -->
+
+                <!-- Submit Button -->
+                <input class="btn" type="submit" value="Validate OTP">
+
+                <div class="extra-line">
+                    <span></span>
+                    <a href="forgot.html">Resend OTP</a>
+                </div>
+
+                <div class="extra-line">
+                    <span></span>
+                    <a href="signin.html">Remembered your password? Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
